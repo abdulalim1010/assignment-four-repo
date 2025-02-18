@@ -1,38 +1,33 @@
-function electionResult(votes) {
-  let mangoSum = 0;
-  let bananaSum = 0;
 
-  // Loop through each vote in the array
-  for (let vote of votes) {
-    // Normalize the vote to lowercase to handle case insensitivity
-    let normalizedVote = vote.toLowerCase();
-
-    if (normalizedVote === "mango") {
-      mangoSum++; // Count mango votes
-    } else if (normalizedVote === "banana") {
-      bananaSum++; // Count banana votes
-    } else {
-      return "Invalid"; // If there's any invalid vote, return "Invalid"
-    }
+function calculateWatchTime(times) {
+  
+  if (!Array.isArray(times) || times.some(time => typeof time !== 'number')) {  
+   
+   return  "invalid";
   }
+  
 
-  // Determine the result based on the count of votes
-  if (mangoSum > bananaSum) {
-    return "Mango";
-  } else if (bananaSum > mangoSum) {
-    return "Banana";
-  } else {
-    return "Draw"; // If the votes are tied, return "Draw"
+ { let totalSeconds = times.reduce((total, time) => total + time, 0);
+  
+ 
+  let hours = Math.floor(totalSeconds / 3600); 
+  totalSeconds %= 3600; 
+
+  let minutes = Math.floor(totalSeconds / 60); 
+  let seconds = totalSeconds % 60; 
+
+  
+  return {
+    hour: hours,
+    minute: minutes,
+    second: seconds
   }
+  
+  }
+  
 }
 
-// কিছু পরীক্ষা করে দেখি
-console.log(electionResult(["mango", "banana", "Na-Vote", "mango"])); // "Mango"
-console.log(electionResult([])); // "Draw"
-console.log(electionResult(["mango", "banana", "invalid", "no"])); // "Invalid"
-console.log(electionResult(["mango"])); // "Mango"
-console.log(electionResult(["banana", "banana", "some invalid vote", "no"])); // "Banana"
-console.log(electionResult(["mango", "banana", "mango"])); // "Mango"
-console.log(electionResult(["mango", "banana", "banana"])); // "Banana"
-console.log(electionResult(["mango", "banana", "mango", "banana", "mango"])); // "Mango"
- 
+
+
+const total = calculateWatchTime([233, "p",7787, 666, 777]);
+console.log(total);  

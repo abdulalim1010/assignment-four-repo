@@ -1,22 +1,22 @@
 
-/*function signature/sample */
 function  electionResult(votes) {
   let mangoSum = 0;
   let bananaSum = 0;
-  for (let vote of votes) {
-    if (vote === "mango") {
+  
+  for (let vote of votes){
+  
+  let normalizedVote = vote.toLowerCase();
+  
+    if (normalizedVote === "mango") {
       mangoSum++;
-    }
-    else if (vote === "banana")
-    {
+    } else if (normalizedVote === "banana") {
       bananaSum++;
+    } else {
+      return "Invalid"; 
     }
-    else {
-      return "invalid"
-    }
-      
-    
   }
+  
+
   if (mangoSum > bananaSum) {
     return "mango";
   }
@@ -24,10 +24,13 @@ function  electionResult(votes) {
   (bananaSum > mangoSum){
     return "banana";
   }
+  else if (mangoSum === 0 && bananaSum === 0) {
+    return "Draw";
+  }
   else {
-    return "drow";
+    return "draw";
     }
   }
-const result = electionResult(["banana", "mango"]);
+const result = electionResult(["banana","alkj","akj","mango"]);
 console.log(result);
 

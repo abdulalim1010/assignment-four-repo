@@ -29,5 +29,5 @@ function calculateWatchTime(times) {
 
 
 
-const total = calculateWatchTime([233, "p",7787, 666, 777]);
+const total = calculateWatchTime([]);
 console.log(total);  

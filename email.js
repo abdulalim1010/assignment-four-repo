@@ -19,6 +19,6 @@ function  validEmail( email ) {
 }
 
 
-const output = validEmail('.lainmffmgmal.com')
+const output = validEmail('lainmffm@gmal.com')
 
 console.log(output)

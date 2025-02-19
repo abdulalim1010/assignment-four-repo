@@ -31,6 +31,6 @@ function  electionResult(votes) {
     return "draw";
     }
   }
-const result = electionResult(["banana","alkj","akj","mango"]);
+const result = electionResult(["banana","mango","mango","banana","mango"]);
 console.log(result);
 
